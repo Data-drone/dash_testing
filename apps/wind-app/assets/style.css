@@ -1,6 +1,6 @@
 body {
     font-family: "Open Sans", sans-serif;
-    background-color: #061E44;
+    background-color: rgb(45, 60, 69);
 }
 
 h6 {
@@ -38,7 +38,7 @@ h6 {
 .wind__speed__container {
     display: flex;
     flex-direction: column;
-    background-color: #082255;
+    background-color: rgb(28, 44, 51);
     border-radius: 0.55rem;
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }
@@ -75,7 +75,7 @@ h6 {
 }
 
 .graph__container {
-    background-color: #082255;
+    background-color: #1c2c33;
     border-radius: 0.55rem;
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }

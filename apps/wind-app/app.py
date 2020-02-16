@@ -21,7 +21,7 @@ app = dash.Dash(
 
 server = app.server
 
-app_color = {"graph_bg": "#082255", "graph_line": "#007ACE"}
+app_color = {"graph_bg": "#1c2c33", "graph_line": "#797979"}
 
 app.layout = html.Div(
     [
@@ -194,14 +194,14 @@ def gen_wind_speed(interval):
     trace = dict(
         type="scatter",
         y=df["Speed"],
-        line={"color": "#42C4F7"},
+        line={"color": "#e86f2d"},
         hoverinfo="skip",
         error_y={
             "type": "data",
             "array": df["SpeedError"],
             "thickness": 1.5,
             "width": 2,
-            "color": "#B4E8FC",
+            "color": "#f5b673",
         },
         mode="lines",
     )
@@ -253,9 +253,9 @@ def gen_wind_direction(interval):
     direction = [0, (df["Direction"][0] - 20), (df["Direction"][0] + 20), 0]
 
     traces_scatterpolar = [
-        {"r": [0, val, val, 0], "fillcolor": "#084E8A"},
-        {"r": [0, val * 0.65, val * 0.65, 0], "fillcolor": "#B4E1FA"},
-        {"r": [0, val * 0.3, val * 0.3, 0], "fillcolor": "#EBF5FA"},
+        {"r": [0, val, val, 0], "fillcolor": "#e86f2d"},
+        {"r": [0, val * 0.65, val * 0.65, 0], "fillcolor": "#f5b673"},
+        {"r": [0, val * 0.3, val * 0.3, 0], "fillcolor": "#fbe6cf"},
     ]
 
     data = [
@@ -365,7 +365,7 @@ def gen_wind_histogram(interval, wind_speed_figure, slider_value, auto_state):
     trace3 = dict(
         type="scatter",
         mode="lines",
-        line={"color": "#42C4F7"},
+        line={"color": "#e86f2d"},
         y=y_val[0],
         x=bin_val[1][: len(bin_val[1])],
         name="Rayleigh Fit",
