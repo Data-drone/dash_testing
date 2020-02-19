@@ -30,6 +30,6 @@ def get_wind_data(start, end):
 def get_wind_data_by_id(id):
 
     table = db.wind
-    df = table[table.rowid=id]
+    df = table[table.rowid = id]
 
     return df
