@@ -3,6 +3,7 @@ import ibis
 
 # Testing impala connection
 
+# should replace with env var?
 webhdfs_host = ''
 webhdfs_port = ''
 impala_host = ''
