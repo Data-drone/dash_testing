@@ -13,7 +13,9 @@ cursor = conn.cursor()
 print("create table")
 
 
-#cursor.execute(""" CREATE TABLE wind (rowid INT, Speed FLOAT, SpeedError FLOAT, Direction FLOAT)""")
+cursor.execute(""" CREATE TABLE wind (rowid INT, Speed FLOAT, SpeedError FLOAT, Direction FLOAT,
+                    PRIMARY KEY(rowid)) PARTITION BY HASH PARTITIONS 16
+                    STORED AS KUDU TBLPROPERTIES ('kudu.num_tablet_replicas' = '1')""")
 
 
 ### read in the data table
