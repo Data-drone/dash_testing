@@ -3,7 +3,9 @@ import sqlite3
 import pandas as pd
 from impala.dbapi import connect
 import sys
+import os
 
+#impala_server = os.environ['IMPALA_SRV']
 impala_server = 'ec2-54-252-190-231.ap-southeast-2.compute.amazonaws.com'
 
 # connect to impala instance
