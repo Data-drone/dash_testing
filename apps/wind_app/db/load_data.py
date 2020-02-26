@@ -6,7 +6,7 @@ import sys
 import os
 
 #impala_server = os.environ['IMPALA_SRV']
-impala_server = 'ec2-54-252-190-231.ap-southeast-2.compute.amazonaws.com'
+impala_server = 'ec2-54-66-248-84.ap-southeast-2.compute.amazonaws.com'
 
 # connect to impala instance
 conn = connect(host=impala_server, port=21050)
