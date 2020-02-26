@@ -26,7 +26,7 @@ def get_wind_data(start, end):
     df = filtered['speed', 'speederror', 'direction']
 
 
-    return df
+    return df.execute()
 
 
 def get_wind_data_by_id(id):
@@ -34,4 +34,4 @@ def get_wind_data_by_id(id):
     table = db.wind
     df = table[table.rowid == id]
 
-    return df
+    return df.execute()
