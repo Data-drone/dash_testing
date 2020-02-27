@@ -6,6 +6,14 @@ import sys
 import os
 
 #impala_server = os.environ['IMPALA_SRV']
+# refactor to use hdfs?
+
+# TODO - redo to generate data load to hdfs then create table and load
+# webhdfs_host = 'ec2-54-66-248-84.ap-southeast-2.compute.amazonaws.com'
+# webhdfs_port = 9870
+# hdfs = ibis.hdfs_connect(host=webhdfs_host, port=webhdfs_port)
+# hdfs.put(hdfs_path='/tmp/', resource='wind_dataset_table.csv')   
+
 impala_server = 'ec2-54-66-248-84.ap-southeast-2.compute.amazonaws.com'
 
 # connect to impala instance
