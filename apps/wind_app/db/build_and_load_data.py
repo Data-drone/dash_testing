@@ -72,9 +72,18 @@ if __name__ == '__main__':
 
     wind_frame.to_parquet('wind_dataset.parq')
 
-    hdfs.put(hdfs_path='/data/wind_dataset.parq', resource='wind_dataset.parq')
+    hdfs_path = '/data/wind_dataset.parq'
+    
+    hdfs.put(hdfs_path=hdfs_path, resource='wind_dataset.parq')
+    hdfs.chmod('/data', 777)  
 
     # CREATE EXTERNAL TABLE wind like parquet '/data/wind_dataset.parq' stored as parquet location '/data/';
+    table = client.parquet_file('/data', name='wind',
+                         database='default',
+                         persist=True)
+
+
+
 
     ### create the table
 
