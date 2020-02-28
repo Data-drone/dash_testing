@@ -9,7 +9,7 @@ import dash_html_components as html
 from dash.exceptions import PreventUpdate
 from dash.dependencies import Input, Output, State
 from scipy.stats import rayleigh
-from db.api import get_wind_data, get_wind_data_by_id
+from db.impala_api import get_wind_data, get_wind_data_by_id
 
 
 GRAPH_INTERVAL = os.environ.get("GRAPH_INTERVAL", 5000)
