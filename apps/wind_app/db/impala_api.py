@@ -1,14 +1,19 @@
 import pandas as pd
 import ibis
 import hdfs
+import os
 
 # Testing impala connection
+impala_host = os.environ['IMPALA_HOST']
+impala_port = os.environ['IMPALA_PORT']
+webhdfs_host = os.environ['WEBHDFS_HOST']
+webhdfs_port = os.environ['WEBHDFS_PORT']
 
 # should replace with env var?
-webhdfs_host = 'ec2-54-66-248-84.ap-southeast-2.compute.amazonaws.com'
-webhdfs_port = 9870
-impala_host = 'ec2-54-66-248-84.ap-southeast-2.compute.amazonaws.com'
-impala_port = 21050
+#webhdfs_host = 'ec2-54-66-248-84.ap-southeast-2.compute.amazonaws.com'
+#webhdfs_port = 9870
+#impala_host = 'ec2-54-66-248-84.ap-southeast-2.compute.amazonaws.com'
+#impala_port = 21050
 
 
 hdfs = ibis.hdfs_connect(host=webhdfs_host, port=webhdfs_port)

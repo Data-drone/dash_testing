@@ -12,6 +12,11 @@ RUN pip3 install --no-cache-dir -r requirements.txt
 
 COPY . .
 
+ENV IMPALA_HOST='ec2-54-66-248-84.ap-southeast-2.compute.amazonaws.com'
+ENV IMPALA_PORT=21050
+ENV WEBHDFS_HOST='ec2-54-66-248-84.ap-southeast-2.compute.amazonaws.com'
+ENV WEBHDFS_PORT=9870
+
 CMD [ "python3", "./app.py" ]
 
 EXPOSE 8050
