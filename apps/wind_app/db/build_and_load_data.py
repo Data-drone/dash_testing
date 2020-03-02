@@ -69,15 +69,19 @@ def build_wind_frame() -> pd.DataFrame:
 
 if __name__ == '__main__':
 
+    print('building frame')
     wind_frame = build_wind_frame()
 
+    print('converting parquet')
     wind_frame.to_parquet('wind_dataset.parq')
 
     hdfs_path = '/data/wind_dataset.parq'
-    
+
+    print('putting hdfs')    
     hdfs.put(hdfs_path=hdfs_path, resource='wind_dataset.parq')
     hdfs.chmod('/data', 777)  
 
+    print('loading impala')
     # CREATE EXTERNAL TABLE wind like parquet '/data/wind_dataset.parq' stored as parquet location '/data/';
     table = client.parquet_file('/data', name='wind',
                          database='default',
