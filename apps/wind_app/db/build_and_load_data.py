@@ -77,7 +77,9 @@ if __name__ == '__main__':
 
     hdfs_path = '/data/wind_dataset.parq'
 
-    print('putting hdfs')    
+    print('putting hdfs')
+    # need to make the folder for new clusters    
+    #hdfs.makedir('/data')
     hdfs.put(hdfs_path=hdfs_path, resource='wind_dataset.parq')
     hdfs.chmod('/data', 777)  
 
