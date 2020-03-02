@@ -12,9 +12,9 @@ import os
 
 # import os
 impala_host = os.environ['IMPALA_HOST']
-impala_port = os.environ['IMPALA_PORT']
+impala_port = int(os.environ['IMPALA_PORT'])
 webhdfs_host = os.environ['WEBHDFS_HOST']
-webhdfs_port = os.environ['WEBHDFS_PORT']
+webhdfs_port = int(os.environ['WEBHDFS_PORT'])
 
 # dev
 #impala_host = 'ec2-54-66-248-84.ap-southeast-2.compute.amazonaws.com'
