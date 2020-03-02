@@ -18,7 +18,7 @@ client = ibis.impala.connect(
 db = client.database('default')
 
 
-def get_wind_data(start, end):
+def get_wind_data(start: int, end: int) -> pd.DataFrame:
 
     table = db.wind
     filtered = table.filter([table.rowid > start,
@@ -29,7 +29,7 @@ def get_wind_data(start, end):
     return df.execute()
 
 
-def get_wind_data_by_id(id):
+def get_wind_data_by_id(id: int) -> pd.DataFrame:
 
     table = db.wind
     df = table[table.rowid == id]
